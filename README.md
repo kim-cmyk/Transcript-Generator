@@ -2,13 +2,13 @@
 
 A Python Jupyter notebook that turns a meeting recording into a clean, shareable HTML report.
 
-**Version:** 1.0.0 · **Date:** 2026-08-06
+**Version:** 2.2.0 * **Date:** 2026-08-06
 
 ## What it does
 
-1. **Transcribes** the meeting audio — optimized for **Thai and English** (mixed-language aware) using [`faster-whisper`](https://github.com/SYSTRAN/faster-whisper).
-2. **Summarizes** the meeting with Google Gemini (`gemini-2.5-flash`) into an executive summary, key points, decisions, and action items.
-3. **Saves** a self-contained HTML report to a folder you pick in a dialog — defaulting to the machine's **real** `Downloads` folder (read from the Windows registry, so a Downloads folder moved to another drive like `D:\` is handled correctly).
+1. **Transcribes** the meeting audio - optimized for **Thai and English** (mixed-language aware) using [`faster-whisper`](https://github.com/SYSTRAN/faster-whisper).
+2. **Summarizes** the meeting with Google Gemini (`gemini-flash-latest`) into an executive summary, key points, decisions, and action items.
+3. **Saves** a self-contained HTML report (bright white theme) to a folder you pick in a dialog - defaulting to the machine's **real** `Downloads` folder (read from the Windows registry, so a Downloads folder moved to another drive like `D:\` is handled correctly).
 
 ## Requirements
 
@@ -17,7 +17,7 @@ A Python Jupyter notebook that turns a meeting recording into a clean, shareable
   - **Windows:** `winget install Gyan.FFmpeg` (then reopen the terminal)
   - **macOS:** `brew install ffmpeg`
   - **Linux:** `sudo apt install ffmpeg`
-- A [Google Gemini API key](https://aistudio.google.com/apikey) for the summary step (optional — an offline fallback summary is produced without one).
+- A [Google Gemini API key](https://aistudio.google.com/apikey) for the summary step (optional - an offline fallback summary is produced without one).
 
 ## Setup
 
@@ -41,7 +41,7 @@ to enter it (masked input) when the summary step runs.
 
 | Setting            | Description                                        | Default        |
 | ------------------ | -------------------------------------------------- | -------------- |
-| `MODEL_SIZE`       | Whisper size: `tiny`…`large-v3`                    | `medium`       |
+| `MODEL_SIZE`       | Whisper size: `tiny`...`large-v3`                  | `medium`       |
 | `COMPUTE_TYPE`     | `int8` (CPU) or `float16` (GPU)                    | `int8`         |
 | `LANGUAGE_HINT`    | `th`, `en`, or `None` (auto-detect)               | `None`         |
 | `SUMMARY_MODEL`    | Gemini model (`gemini-flash-latest` / `gemini-pro-latest`); auto-falls back to an available model | `gemini-flash-latest` |
@@ -54,4 +54,4 @@ to enter it (masked input) when the summary step runs.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT - see [LICENSE](LICENSE).
