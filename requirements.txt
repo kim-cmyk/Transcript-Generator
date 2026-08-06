@@ -1,0 +1,5 @@
+# Transcript Generator dependencies
+# Version: 2.0.0 | Date: 2026-08-06
+faster-whisper>=1.0.0
+google-genai>=1.0.0
+python-dotenv>=1.0.0
